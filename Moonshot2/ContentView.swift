@@ -8,9 +8,77 @@
 import SwiftUI
 
 struct ContentView: View {
+    static let imageModes = [
+        " Image": "Too big for the available space",
+        "frame": "Still appear to be its full size",
+        "frame, clipped": "Full size but clipped to frame",
+        "resizable, frame": "Rezied disproportionately",
+        "resizable, scaledToFill, frame": "The view will have no empty parts even if that means some of our image lies outside the container",
+        "resizable, scaledToFit, frame": "Entire image will fit inside the container even if that menas leaving some parts of the view empty",
+        "GeometryReader, width, height": "An image that's 80% the width of the container, with a fixed height of 300",
+        "GeomeryReader, width": "An image that's 80% the width of the container"
+    ]
+    @State private var imageMode = " Image"
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                Picker("Mode", selection: $imageMode) {
+                    ForEach(Self.imageModes.sorted(by: <), id: \.key) { key, value in
+                        Text(key)
+                    }
+                    .pickerStyle(.automatic)
+                }
+
+                switch imageMode {
+                case "frame":
+                    Image("Example")
+                        .frame(width: 300, height: 300)
+                case "frame, clipped":
+                    Image("Example")
+                        .frame(width: 300, height: 300)
+                        .clipped()
+                case "resizable, frame":
+                    Image("Example")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                case "resizable, scaledToFit, frame":
+                    Image("Example")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                case "resizable, scaledToFill, frame":
+                    Image("Example")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 300, height: 300)
+                case "GeometryReader, width, height":
+                    GeometryReader { geo in
+                        // geo is a GeometryProxy object. This lets us query
+                        // the environment: how big is the container?
+                        // What position is our view? Are there any safe area
+                        // insets?
+                        Image("Example")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width * 0.95, height: 300)
+                            .frame(width: geo.size.width, height: geo.size.height)
+                    }
+                case "GeometryReader, width":
+                    GeometryReader { geo in
+                        Image("Example")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width * 0.95)
+                            .frame(width: geo.size.width, height: geo.size.height)
+                    }
+                default:
+                    Image("Example")
+                }
+
+                Text(Self.imageModes[imageMode]!)
+            }
+        }
     }
 }
 
