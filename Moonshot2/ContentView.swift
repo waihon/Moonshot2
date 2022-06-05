@@ -8,6 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    var body: some View {
+        VStack {
+            GeometryReader { geo in
+                Image("Example")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geo.size.width * 0.8, height: 150)
+            }
+            Text("An image that's 80% the width of the container, with a fixed height of 300.")
+
+            GeometryReader { geo in
+                Image("Example")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geo.size.width * 0.8)
+            }
+            Text("An image that's 80% the width of the container.")
+
+            GeometryReader { geo in
+                Image("Example")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geo.size.width * 0.8)
+                    .frame(width: geo.size.width, height: geo.size.height)
+            }
+            Text("Add a second frame that makes it fill the full space of the container in order to center an image inside a GeometryReader.")
+        }
+    }
+}
+
+struct ImageContentView: View {
     static let imageModes = [
         " Image": "Too big for the available space",
         "frame": "Still appear to be its full size",
