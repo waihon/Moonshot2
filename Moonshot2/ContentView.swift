@@ -9,6 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        ScrollView {
+            VStack(spacing: 10) {
+                ForEach(0..<100) {
+                    Text("Item \($0 + 1)")
+                        .font(.title)
+                }
+            }
+        }
+    }
+}
+
+struct GeometryContentView: View {
+    var body: some View {
         VStack {
             GeometryReader { geo in
                 Image("Example")
