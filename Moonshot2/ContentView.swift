@@ -18,6 +18,10 @@ struct Address: Codable {
 }
 
 struct ContentView: View {
+    @State private var showingAlert = false
+    @State private var user = User(name: "",
+        address: Address(street: "", city: ""))
+
     var body: some View {
         Button("Decode JSON") {
             let input = """
@@ -33,8 +37,18 @@ struct ContentView: View {
             let data = Data(input.utf8)
             let decoder = JSONDecoder()
             if let user = try? decoder.decode(User.self, from: data) {
-                print(user.address.street)
+                self.user = user
+                showingAlert = true
             }
+        }
+        .alert("Decoded Data", isPresented: $showingAlert) {
+            Button("Continue") { }
+        } message: {
+            Text("""
+            Name: \(user.name)
+            Street: \(user.address.street)
+            City: \(user.address.city)
+            """)
         }
     }
 }
