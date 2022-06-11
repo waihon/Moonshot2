@@ -29,7 +29,6 @@ struct ContentView: View {
                         .font(.title)
                 }
             }
-            .frame(maxWidth: .infinity)
         }
     }
 }
