@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    var body: some View {
+        ScrollView(.horizontal) {
+            LazyHStack(spacing: 10) {
+                ForEach(0..<100) {
+                    CustomText("Item \($0 + 1)")
+                        .font(.title)
+                }
+            }
+        }
+    }
+}
+
 struct CustomText: View {
     let text: String
 
@@ -20,7 +33,7 @@ struct CustomText: View {
     }
 }
 
-struct ContentView: View {
+struct VerticalStackContentView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 10) {
