@@ -9,6 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        NavigationView {
+            Text("Hello, world!")
+                .padding()
+                .navigationTitle("SwiftUI")
+        }
+    }
+}
+
+struct HorizontalStackContentView: View {
+    var body: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 10) {
                 ForEach(0..<100) {
