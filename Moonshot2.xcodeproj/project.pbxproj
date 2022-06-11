@@ -13,6 +13,7 @@
 		4F719EE0284C6D8000525106 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F719EDF284C6D8000525106 /* Preview Assets.xcassets */; };
 		4FAD62422854F9230063838A /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD62402854F9230063838A /* missions.json */; };
 		4FAD62432854F9230063838A /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD62412854F9230063838A /* astronauts.json */; };
+		4FAD62452854FB820063838A /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD62442854FB820063838A /* Astronaut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		4F719EDF284C6D8000525106 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4FAD62402854F9230063838A /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		4FAD62412854F9230063838A /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
+		4FAD62442854FB820063838A /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				4F719ED8284C6D7F00525106 /* Moonshot2App.swift */,
 				4F719EDA284C6D7F00525106 /* ContentView.swift */,
+				4FAD62442854FB820063838A /* Astronaut.swift */,
 				4FAD62412854F9230063838A /* astronauts.json */,
 				4FAD62402854F9230063838A /* missions.json */,
 				4F719EDC284C6D8000525106 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FAD62452854FB820063838A /* Astronaut.swift in Sources */,
 				4F719EDB284C6D7F00525106 /* ContentView.swift in Sources */,
 				4F719ED9284C6D7F00525106 /* Moonshot2App.swift in Sources */,
 			);
