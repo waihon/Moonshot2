@@ -9,6 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        Button("Decode JSON") {
+            let input = """
+            {
+                "name": "Taylor Swift",
+                "address": {
+                    "street": "555, Taylor Swift Avanue",
+                    "city": "Nashville"
+                }
+            }
+            """
+        }
+    }
+}
+
+struct ListLinkContentView: View {
+    var body: some View {
         NavigationView {
             List(1..<101) { row in
                 NavigationLink {
