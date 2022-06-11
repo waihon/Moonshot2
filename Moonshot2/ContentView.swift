@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     let layout = [
-        GridItem(.adaptive(minimum: 80))
+        GridItem(.adaptive(minimum: 80, maximum: 120))
     ]
 
     var body: some View {
