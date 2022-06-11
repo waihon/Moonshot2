@@ -7,7 +7,24 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    let layout = [
+        GridItem(.adaptive(minimum: 50, maximum: 80))
+    ]
+
+    var body: some View {
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: layout) {
+                ForEach(1..<1001) {
+                    Text("Item \($0)")
+                }
+            }
+        }
+    }
+}
+
+struct VerticalGridContentView: View {
     let layout = [
         GridItem(.adaptive(minimum: 80, maximum: 120))
     ]
