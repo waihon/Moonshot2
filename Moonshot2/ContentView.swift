@@ -7,6 +7,24 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    let layout = [
+        GridItem(.fixed(80)),
+        GridItem(.fixed(80)),
+        GridItem(.fixed(80))
+    ]
+
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: layout) {
+                ForEach(1..<1001) {
+                    Text("Item \($0)")
+                }
+            }
+        }
+    }
+}
+
 struct User: Codable {
     let name: String
     let address: Address
@@ -17,7 +35,7 @@ struct Address: Codable {
     let city: String
 }
 
-struct ContentView: View {
+struct HierarchicalCodableContentView: View {
     @State private var showingAlert = false
     @State private var user = User(name: "",
         address: Address(street: "", city: ""))
