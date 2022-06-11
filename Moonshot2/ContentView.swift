@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct CustomText: View {
+    let text: String
+
+    var body: some View {
+        Text(text)
+    }
+
+    init(_ text: String) {
+        print("Creating a new CustomText: \(text)")
+        self.text = text
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         ScrollView {
