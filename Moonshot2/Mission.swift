@@ -13,10 +13,19 @@ struct Mission: Codable, Identifiable {
         let name: String
         let role: String
     }
+
     let id: Int
     // Codable will automatically skip over optionals if the values
     // is mmising from our input JSON.
     let launchDate: String?
     let crew: [CrewRole]
     let description: String
+
+    var displayName: String {
+        "Apollo \(id)"
+    }
+
+    var image: String {
+        "apollo\(id)"
+    }
 }
