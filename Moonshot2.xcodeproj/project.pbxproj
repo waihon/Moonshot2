@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F5C114228562C3200480C96 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C114128562C3200480C96 /* Color-Theme.swift */; };
 		4F5DEEE8285584DD001631E2 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DEEE7285584DD001631E2 /* Mission.swift */; };
 		4F719ED9284C6D7F00525106 /* Moonshot2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F719ED8284C6D7F00525106 /* Moonshot2App.swift */; };
 		4F719EDB284C6D7F00525106 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F719EDA284C6D7F00525106 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F5C114128562C3200480C96 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		4F5DEEE7285584DD001631E2 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		4F719ED5284C6D7F00525106 /* Moonshot2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F719ED8284C6D7F00525106 /* Moonshot2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moonshot2App.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		4F719ECC284C6D7F00525106 = {
 			isa = PBXGroup;
 			children = (
+				4F5C114128562C3200480C96 /* Color-Theme.swift */,
 				4F719ED7284C6D7F00525106 /* Moonshot2 */,
 				4F719ED6284C6D7F00525106 /* Products */,
 			);
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FAD62452854FB820063838A /* Astronaut.swift in Sources */,
+				4F5C114228562C3200480C96 /* Color-Theme.swift in Sources */,
 				4F719EDB284C6D7F00525106 /* ContentView.swift in Sources */,
 				4F719ED9284C6D7F00525106 /* Moonshot2App.swift in Sources */,
 				4F5DEEE8285584DD001631E2 /* Mission.swift in Sources */,
