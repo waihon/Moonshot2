@@ -55,6 +55,7 @@ struct ContentView: View {
             }
             .navigationTitle("Moonshot")
             .background(.darkBackground)
+            .preferredColorScheme(.dark)
         }
     }
 }
