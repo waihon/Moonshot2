@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CrewRole: Codable {
-    let name: String
-    let role: String
-}
-
 struct Mission: Codable, Identifiable {
+    // Mission.CrewRole nested struct
+    struct CrewRole: Codable {
+        let name: String
+        let role: String
+    }
     let id: Int
     // Codable will automatically skip over optionals if the values
     // is mmising from our input JSON.
