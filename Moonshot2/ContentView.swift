@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    let astronauts = Bundle.main.decode("astronauts.json")
+    // Since decode now returns any type that conforms to Codable,
+    // we need to use a type annotation so Swift knows exactly
+    // what astronauts will be.
+    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
 
     var body: some View {
         Text("\(astronauts.count)")
