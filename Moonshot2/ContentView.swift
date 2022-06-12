@@ -12,9 +12,12 @@ struct ContentView: View {
     // we need to use a type annotation so Swift knows exactly
     // what astronauts will be.
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    let missions: [Mission] = Bundle.main.decode("missions.json")
 
     var body: some View {
-        Text("\(astronauts.count)")
+        Text("Astronauts: \(astronauts.count)")
+            .padding()
+        Text("Missions: \(missions.count)")
             .padding()
     }
 }
