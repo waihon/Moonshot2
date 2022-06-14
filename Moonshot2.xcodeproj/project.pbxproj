@@ -17,6 +17,7 @@
 		4FAD62432854F9230063838A /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD62412854F9230063838A /* astronauts.json */; };
 		4FAD62452854FB820063838A /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD62442854FB820063838A /* Astronaut.swift */; };
 		4FAD62472854FC2A0063838A /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD62462854FC2A0063838A /* Bundle-Decodable.swift */; };
+		4FD8ECB72858CE90004BFD88 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8ECB62858CE90004BFD88 /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4FAD62412854F9230063838A /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		4FAD62442854FB820063838A /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		4FAD62462854FC2A0063838A /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		4FD8ECB62858CE90004BFD88 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 		4F719ECC284C6D7F00525106 = {
 			isa = PBXGroup;
 			children = (
+				4FD8ECB62858CE90004BFD88 /* MissionView.swift */,
 				4F5C114128562C3200480C96 /* Color-Theme.swift */,
 				4F719ED7284C6D7F00525106 /* Moonshot2 */,
 				4F719ED6284C6D7F00525106 /* Products */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD8ECB72858CE90004BFD88 /* MissionView.swift in Sources */,
 				4FAD62452854FB820063838A /* Astronaut.swift in Sources */,
 				4F5C114228562C3200480C96 /* Color-Theme.swift in Sources */,
 				4F719EDB284C6D7F00525106 /* ContentView.swift in Sources */,
