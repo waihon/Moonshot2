@@ -75,7 +75,7 @@ struct MissionView: View {
                                             .clipShape(Circle())
                                             .overlay(
                                                 Circle()
-                                                    .strokeBorder(.white, lineWidth: 1)
+                                                    .strokeBorder(isCommander(crewMember.role) ? .blue : .yellow, lineWidth: 3)
                                             )
 
                                         VStack(alignment: .leading) {
@@ -83,7 +83,7 @@ struct MissionView: View {
                                                 .foregroundColor(.white)
                                                 .font(.headline)
                                             Text(crewMember.role)
-                                                .foregroundColor(.secondary)
+                                                .foregroundColor(isCommander(crewMember.role) ? .blue : .yellow)
 
                                         }
                                     }
@@ -99,6 +99,15 @@ struct MissionView: View {
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .background(.darkBackground)
+    }
+
+    func isCommander(_ role: String) -> Bool {
+        switch role {
+        case "Commander", "Command Pilot":
+            return true
+        default:
+            return false
+        }
     }
 }
 
