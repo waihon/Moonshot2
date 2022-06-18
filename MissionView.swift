@@ -46,16 +46,17 @@ struct MissionView: View {
                         .frame(maxWidth: geomery.size.width * 0.6)
                         .padding(.top)
 
-                    Divider()
 
                     VStack(alignment: .leading) {
+                        CustomDivider()
+
                         Text("Mission Highlights")
                             .font(.title.bold())
                             .padding(.bottom, 5)
 
                         Text(mission.description)
 
-                        Divider()
+                        CustomDivider()
                     }
                     .padding(.horizontal)
 
@@ -112,6 +113,15 @@ struct MissionView: View {
         default:
             return false
         }
+    }
+}
+
+struct CustomDivider: View {
+    var body: some View {
+        Rectangle()
+            .frame(height: 2)
+            .foregroundColor(.lightBackground)
+            .padding(.vertical)
     }
 }
 
