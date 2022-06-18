@@ -19,10 +19,13 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            GridLayout(missions: missions, astronauts: astronauts)
-                .navigationTitle("Moonshot")
-                .background(.darkBackground)
-                .preferredColorScheme(.dark)
+            Group {
+                ListLayout(missions: missions, astronauts: astronauts)
+                    .navigationTitle("Moonshot")
+                    .background(.darkBackground)
+                    .preferredColorScheme(.dark)
+
+            }
         }
     }
 }
