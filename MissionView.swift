@@ -46,6 +46,7 @@ struct MissionView: View {
                         .frame(maxWidth: geomery.size.width * 0.6)
                         .padding(.top)
 
+                    Text(launchText)
 
                     VStack(alignment: .leading) {
                         CustomDivider()
@@ -112,6 +113,14 @@ struct MissionView: View {
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .background(.darkBackground)
+    }
+
+    var launchText: String {
+        if let launchDate = mission.launchDate {
+            return "Launched on \(launchDate.formatted(date: .long, time: .omitted))"
+        } else {
+            return "Not launched"
+        }
     }
 
     func isCommander(_ role: String) -> Bool {
