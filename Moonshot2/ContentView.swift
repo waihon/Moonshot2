@@ -16,17 +16,30 @@ struct ContentView: View {
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
+    @State private var showingGrid = true
 
     var body: some View {
         NavigationView {
             Group {
-                ListLayout(missions: missions, astronauts: astronauts)
-                    .navigationTitle("Moonshot")
-                    .background(.darkBackground)
-                    .preferredColorScheme(.dark)
-
+                if showingGrid {
+                    GridLayout(missions: missions, astronauts: astronauts)
+                } else {
+                    ListLayout(missions: missions, astronauts: astronauts)
+                }
+            }
+            .navigationTitle("Moonshot")
+            .background(.darkBackground)
+            .preferredColorScheme(.dark)
+            .toolbar {
+                Button(buttonText) {
+                    showingGrid.toggle()
+                }
             }
         }
+    }
+
+    var buttonText: String {
+        showingGrid ? "List Layout" : "Grid Layout"
     }
 }
 
