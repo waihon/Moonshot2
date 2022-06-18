@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct MissionView: View {
-    struct CrewMember {
-        let role: String
-        let astronaut: Astronaut
-    }
-
     let mission: Mission
     let crew: [CrewMember]
 
@@ -76,36 +71,7 @@ struct MissionView: View {
                     // same padding as the rest of our text, which means it
                     // would scroll strangely - the crew would get clipped as
                     // it hits the leading edge of our VStack, which looks odd.
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(crew, id: \.role) { crewMember in
-                                NavigationLink {
-                                    AstronautView(astronaut: crewMember.astronaut)
-                                } label: {
-                                    HStack {
-                                        Image(crewMember.astronaut.id)
-                                            .resizable()
-                                            .frame(width: 104, height: 72)  // aready in proportion
-                                            .clipShape(Circle())
-                                            .overlay(
-                                                Circle()
-                                                    .strokeBorder(isCommander(crewMember.role) ? .blue : .yellow, lineWidth: 3)
-                                            )
-
-                                        VStack(alignment: .leading) {
-                                            Text(crewMember.astronaut.name)
-                                                .foregroundColor(.white)
-                                                .font(.headline)
-                                            Text(crewMember.role)
-                                                .foregroundColor(isCommander(crewMember.role) ? .blue : .yellow)
-
-                                        }
-                                    }
-                                    .padding(.horizontal)
-                                }
-                            }
-                        }
-                    }
+                    CrewView(crew: crew)
                 }
                 .padding(.bottom)
             }
