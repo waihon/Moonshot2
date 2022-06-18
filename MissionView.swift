@@ -72,9 +72,9 @@ struct MissionView: View {
                                         Image(crewMember.astronaut.id)
                                             .resizable()
                                             .frame(width: 104, height: 72)  // aready in proportion
-                                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                                            .clipShape(Circle())
                                             .overlay(
-                                                RoundedRectangle(cornerRadius: 10.0)
+                                                Circle()
                                                     .strokeBorder(.white, lineWidth: 1)
                                             )
 
