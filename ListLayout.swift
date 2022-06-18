@@ -17,7 +17,19 @@ struct ListLayout: View {
                 NavigationLink {
                     MissionView(mission: mission, astronauts: astronauts)
                 } label: {
-                    Text("\(mission.displayName)")
+                    Image(mission.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 70, height: 70)
+                        .padding()
+                    VStack(alignment: .leading) {
+                        Text(mission.displayName)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        Text(mission.formattedLaunchDate)
+                            .font(.subheadline)
+                            .foregroundColor(.white.opacity(0.85))
+                    }
                 }
             }
         }
