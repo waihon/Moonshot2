@@ -57,6 +57,14 @@ struct MissionView: View {
                         Text(mission.description)
 
                         CustomDivider()
+
+                        // Although this relates to the scroll view, it needs
+                        // to have the same padding as the rest of our text.
+                        // So, the best place for this is inside the VStack,
+                        // directly after the previous custom divider.
+                        Text("Crew")
+                            .font(.title.bold())
+                            .padding(.bottom, 5)
                     }
                     .padding(.horizontal)
 
