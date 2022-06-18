@@ -54,6 +54,44 @@ struct MissionView: View {
                         Text(mission.description)
                     }
                     .padding(.horizontal)
+
+                    // Scroll views work best when they take full advantage of
+                    // the available scren space, which means they should
+                    // scroll edge to edge.
+                    // If we put this inside our VStack above it would have the
+                    // same padding as the rest of our text, which means it
+                    // would scroll strangely - the crew would get clipped as
+                    // it hits the leading edge of our VStack, which looks odd.
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(crew, id: \.role) { crewMember in
+                                NavigationLink {
+                                    Text("Astronaut details")
+                                } label: {
+                                    HStack {
+                                        Image(crewMember.astronaut.id)
+                                            .resizable()
+                                            .frame(width: 104, height: 72)  // aready in proportion
+                                            .clipShape(Capsule())
+                                            .overlay(
+                                                Capsule()
+                                                    .strokeBorder(.white, lineWidth: 1)
+                                            )
+
+                                        VStack(alignment: .leading) {
+                                            Text(crewMember.astronaut.name)
+                                                .foregroundColor(.white)
+                                                .font(.headline)
+                                            Text(crewMember.role)
+                                                .foregroundColor(.secondary)
+
+                                        }
+                                    }
+                                    .padding(.horizontal)
+                                }
+                            }
+                        }
+                    }
                 }
                 .padding(.bottom)
             }
